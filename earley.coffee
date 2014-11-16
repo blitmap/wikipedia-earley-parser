@@ -26,7 +26,7 @@ String::rpad ?= (n = 0, p = ' ') ->
 
 String::pad ?= (n = 0, p = ' ') ->
 	return @ unless n > @length
-	return @lpad(Math.floor(n / 2), p) + @ + @rpad(Math.ceil(n / 2), p)
+	return @lpad(Math.floor((n + @length) / 2), p).rpad(n, p)
 
 # think of Productions like logical-and matching terms
 class Production extends Array
